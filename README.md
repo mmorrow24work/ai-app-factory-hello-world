@@ -2,6 +2,26 @@
 
 Create a simple hello-world site to test the ai-app-factory build process Built and evolved via the unattended (Lane B) Claude Code pipeline: label an issue `claude-go` and `.github/workflows/claude.yml` implements it, opens a PR, and records the run in `docs/journal.md`.
 
+This is a **factory smoke test, not a maintained project** — it exists to
+exercise the ai-app-factory pipeline end to end, not to be a real
+application. See `about.html` (or [`/about.html`](https://mmorrow24work.github.io/ai-app-factory-hello-world/about.html) live) for how it was built.
+
+## Live site
+
+https://mmorrow24work.github.io/ai-app-factory-hello-world/
+
+## Viewing locally
+
+Serve the repo root over HTTP rather than opening the HTML files directly,
+since production (GitHub Pages) is what exercises the relative paths
+between pages and `style.css`:
+
+```sh
+python3 -m http.server
+```
+
+Then visit `http://localhost:8000/`.
+
 ## Support & Handoff
 
 ### Support

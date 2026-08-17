@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — ai-app-factory-hello-world</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>How this site was built</h1>
+    <p class="greeting">
+      This page is itself one of the artifacts produced by the
+      <strong>ai-app-factory</strong>: a pipeline that turns a one-sentence
+      request into a small, working site with no human writing code by hand.
+      Here's how that happened, end to end.
+    </p>
+    <ol class="ask" style="text-align: left;">
+      <li>
+        <strong>One-sentence ask.</strong> Someone wrote a single sentence
+        describing what they wanted: "Create a simple hello-world site to
+        test the ai-app-factory build process."
+      </li>
+      <li>
+        <strong>Drafted design doc PR.</strong> An agent expanded that
+        sentence into a short design document — what pages exist, what they
+        contain, how they're tested — and opened it as a pull request for
+        review.
+      </li>
+      <li>
+        <strong>Merged doc triggering issue generation.</strong> Once the
+        design doc PR was merged, that merge itself triggered the next step:
+        breaking the design into a sequence of concrete milestones and
+        issues.
+      </li>
+      <li>
+        <strong>Human provisioning.</strong> A person set up the one-time
+        things an agent can't: repo settings, GitHub Pages, and the secrets
+        (like an OAuth token) the unattended pipeline needs to act on the
+        repo's behalf.
+      </li>
+      <li>
+        <strong>Milestone/issue seeding.</strong> The generated milestones
+        and issues were created in the repo, each scoped to one reviewable
+        change, each labeled so the pipeline knows to pick it up.
+      </li>
+      <li>
+        <strong>Unattended implementation PRs.</strong> For each labeled
+        issue, an agent read the issue and this repo's conventions, made the
+        change, ran the checks, and opened a pull request — no one in the
+        loop until review.
+      </li>
+      <li>
+        <strong>Pages deploy.</strong> Merging to the main branch triggers a
+        GitHub Actions workflow that publishes the repo's static files
+        straight to GitHub Pages, which is what's serving this page to you
+        right now.
+      </li>
+    </ol>
+    <p class="ask">
+      <a href="index.html">&larr; Back to the hello-world page</a>
+    </p>
+  </main>
+</body>
+</html>
