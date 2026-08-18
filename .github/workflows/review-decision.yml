@@ -93,8 +93,12 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
+          # Tolerate zero matches (no "Requested by" line yet, or malformed) -- that's the
+          # expected shape for older repos, and must fall through to owner-only authorization
+          # below, not crash the step: grep exits 1 on no match, and with pipefail that would
+          # otherwise trip set -e before the authorization check ever runs.
           requester=$(grep -oE '\[@[A-Za-z0-9-]+\]\(https://github\.com/[A-Za-z0-9-]+\)' README.md \
-            | head -n1 | sed -E 's/\[@([A-Za-z0-9-]+)\].*/\1/')
+            | head -n1 | sed -E 's/\[@([A-Za-z0-9-]+)\].*/\1/' || true)
           login="${{ steps.issue.outputs.login }}"
           owner="${{ github.repository_owner }}"
 
