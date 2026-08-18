@@ -17,3 +17,4 @@ Once this project's milestones are complete, fork the repo to take ownership.
 
 GitHub forks do **not** inherit the parent repo's Actions secrets, so `claude-go` stops working on the fork the instant it's created — no separate revoke step needed on the original owner's side. To keep the unattended pipeline running, the new owner sets up their own `CLAUDE_CODE_OAUTH_TOKEN`/`GH_PAT` secrets on their fork (same `claude setup-token` / `gh secret set` steps documented in the `ai-app-factory` repo's own `README.md`).
 <!-- test-review-approve 2026-08-18T10:09:54Z -->
+<!-- test-review-reject 2026-08-18T10:13:59Z -->
